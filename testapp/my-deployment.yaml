@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: test-pod
   namespace: default
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.teams: mischasTestChannel
 spec:
   replicas: 1
   revisionHistoryLimit: 3
