@@ -17,26 +17,26 @@ spec:
       labels:
         app.kubernetes.io/name: test-pod
     spec:
-      containers:
-        - name: test-pod
-          image: "alpine:3.17.2"
-          imagePullPolicy: Always
-          command: [ "/bin/sh", "-c", "--" ]
-          args: [ "while true; do sleep 3600; done;" ]
-          resources:
-            limits:
-              cpu: 500m
-              memory: 1024Mi
-            requests:
-              cpu: 500m
-              memory: 1024Mi
-          volumeMounts:
-            - mountPath: /tmp
-              name: tmp
-          securityContext:
-            readOnlyRootFilesystem: true
-            seccompProfile:
-              type: RuntimeDefault
+  containers:
+    - name: test-pod
+      image: "alpine:3.17.2"
+      imagePullPolicy: Always
+      command: [ "/bin/sh", "-c", "--" ]
+      args: [ "while true; do sleep 3600; done;" ]
+      resources:
+        limits:
+          cpu: 500m
+          memory: 1024Mi
+        requests:
+          cpu: 500m
+          memory: 1024Mi
+      volumeMounts:
+        - mountPath: /tmp
+          name: tmp
+      securityContext:
+        readOnlyRootFilesystem: true
+        seccompProfile:
+          type: RuntimeDefault
       volumes:
         - emptyDir: { }
           name: tmp
