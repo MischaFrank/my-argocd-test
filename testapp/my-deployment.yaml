@@ -11,9 +11,6 @@ spec:
       app.kubernetes.io/name: test-pod
   template:
     metadata:
-      annotations:
-        notifications.argoproj.io/subscribe.on-sync-succeeded.teams: mischasTestChannel
-        notifications.argoproj.io/subscribe.on-sync-running.teams: mischasTestChannel
       labels:
         app.kubernetes.io/name: test-pod
     spec:
