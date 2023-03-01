@@ -22,10 +22,10 @@ spec:
           args: [ "while true; do sleep 3600; done;" ]
           resources:
             limits:
-              cpu: 500m
+              cpu: 5000m
               memory: 1024Mi
             requests:
-              cpu: 500m
+              cpu: 5000m
               memory: 1024Mi
           volumeMounts:
             - mountPath: /tmp
